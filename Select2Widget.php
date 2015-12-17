@@ -85,6 +85,9 @@ class Select2Widget extends \yii\widgets\InputWidget
             $this->options['data-ajax--url'] = Url::to($this->ajax);
             $this->options['data-ajax--cache'] = 'true';
         }
+        if (isset($this->settings['ajax'])) {
+            unset($this->options['data-ajax--url']);
+        }
         if ($this->placeholder) {
             $this->options['data-placeholder'] = $this->placeholder;
         }
